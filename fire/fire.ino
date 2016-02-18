@@ -14,9 +14,10 @@ const unsigned char max_br = 255; //max brightness
 unsigned char targ_br = 128; //brightness to be aimed for (average)
 
 unsigned char cur_br[LENGTH]; //current intesity of each led
+unsigned char cur_lit[LENGTH]; //current lit intensity for composite function
 unsigned char color[] = {0xFF, 0x60, 0x00}; //hardcoded orangish color
 
-unsigned char variance = 5; //the amount the led should change with each step
+unsigned char variance = 3; //the amount the led should change with each step
 double c_scale[3]; //scaled intensity of each color
 
 char mode = 0;
@@ -73,7 +74,7 @@ void burn(){
 
 
 		case 1:
-			greenColorScale(last_loop);
+			compositeColorScale(last_loop);
 			
 			break;
 			
@@ -105,6 +106,23 @@ void greenColorScale(long last_loop){
 
 		cur_br[i] = calcNextValue(cur_br[i], targ_br);
 		leds.setPixelColor(i, color[0], scale(cur_br[i], c_scale[1]), color[2]);
+	}
+	if(last_loop + loop_length > millis()){
+		delay(last_loop - millis() + loop_length);
+	}
+}
+
+void compositeColorScale(long last_loop){
+	for(int i = 0; i < LENGTH; i++){
+
+		cur_br[i] = calcNextValue(cur_br[i], targ_br);
+		cur_lit[i] = calcNextValue(cur_lit[i], targ_br);
+		cur_lit[i] = (cur_lit[i] > 0x80) ? 0x80 : (cur_lit[i] < 0x50) ? 0x50 : cur_lit[i];
+		leds.setPixelColor(i,
+			scale(cur_br[i], c_scale[0]),
+			scale(cur_br[i], scaleFactor(cur_lit[i], max_br)),
+			scale(cur_br[i],c_scale[2])
+			);
 	}
 	if(last_loop + loop_length > millis()){
 		delay(last_loop - millis() + loop_length);
