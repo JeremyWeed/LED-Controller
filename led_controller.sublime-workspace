@@ -245,9 +245,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-	],
 	"build_system": "Packages/User/216_C.sublime-build",
 	"build_system_choices":
 	[
@@ -291,13 +288,13 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 566.0,
+		"height": 600.0,
 		"last_filter": "in",
 		"selected_items":
 		[
 			[
 				"in",
-				"Package Control: Install Package"
+				"Colorsublime: Install Theme"
 			],
 			[
 				"Col",
@@ -384,7 +381,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 698.0
+		"width": 704.0
 	},
 	"console":
 	{
@@ -408,12 +405,16 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/jeremy/workspace/arduino/led_controller"
-	],
 	"file_history":
 	[
+		"/home/jeremy/workspace/arduino/led_controller/fire/fire.ino",
+		"/home/jeremy/workspace/arduino/led_controller/led.h",
+		"/home/jeremy/workspace/arduino/led_controller/led_controller.ino",
+		"/home/jeremy/workspace/arduino/led_controller/snow/snow.ino",
+		"/home/jeremy/workspace/arduino/led_controller/README.md",
+		"/home/jeremy/workspace/arduino/led_controller/fire/fire.c",
+		"/home/jeremy/workspace/arduino/led_controller/fire/fire.h",
+		"/home/jeremy/workspace/arduino/led_controller/testing.c",
 		"/home/jeremy/workspace/College/CMSC 216/photoalbum/my_memory_checker_216.c",
 		"/home/jeremy/workspace/College/CMSC 216/photoalbum/my_memory_checker_216.h",
 		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/photoalbum/build.sh",
@@ -453,12 +454,10 @@
 		"/tmp/yaourt-tmp-jeremy/aur-python-powerline-git/PKGBUILD",
 		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/textmanipulation/public01.output",
 		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/textmanipulation/textmanipulation.c",
-		"/home/jeremy/workspace/arduino/led_controller/fire/fire.ino",
 		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project1/grades.c",
 		"/home/jeremy/.themes/Flatabulous-master/gtk-2.0/gtkrc",
 		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216public/info/using_git.txt",
 		"/home/jeremy/.cache/.fr-qUhejZ/README.md",
-		"/home/jeremy/workspace/arduino/led_controller/testing.c",
 		"/home/jeremy/.cache/.fr-xZai9H/README.md",
 		"/home/jeremy/workspace/College/stuff/cvec.c",
 		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/dvl/src/main.cpp",
@@ -608,14 +607,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"sheets":
-			[
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 32.0
@@ -660,7 +651,6 @@
 		"height": 158.0
 	},
 	"pinned_build_system": "Packages/User/216_C.sublime-build",
-	"project": "led_controller.sublime-project",
 	"replace":
 	{
 		"height": 60.0
@@ -693,7 +683,6 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 	},

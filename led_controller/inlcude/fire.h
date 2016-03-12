@@ -24,6 +24,10 @@ typedef struct fire_set{
 
 	//amount the led should change with each interation
 	unsigned char variance = 3;
+
+	//determines how random the variations are
+	//the higher the number, the more random
+	unsigned long steps = 12800;
 }FireSet;
 
 FireSet *fire_set;
@@ -39,6 +43,7 @@ static double calcThetaWalk(int cur, int target);
 static int calcNextValue(int cur, int target);
 static int scale(int num, double scale);
 static double scaleFactor(int startMax, int endMax);
+static int clamp(int val);
 
 
 
