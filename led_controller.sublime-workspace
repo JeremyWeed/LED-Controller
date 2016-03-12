@@ -1,0 +1,709 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"oper",
+				"operation"
+			],
+			[
+				"displa",
+				"display_i"
+			],
+			[
+				"dele",
+				"delete_i"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"insert",
+				"insert_i"
+			],
+			[
+				"Image",
+				"ImageTransport"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"has",
+				"Hash_bucket"
+			],
+			[
+				"ke",
+				"key_ct"
+			],
+			[
+				"buck",
+				"buckets"
+			],
+			[
+				"sear",
+				"search_struct"
+			],
+			[
+				"nu",
+				"NUM_BUCKETS"
+			],
+			[
+				"str",
+				"strcpy"
+			],
+			[
+				"hash",
+				"hash_code"
+			],
+			[
+				"image",
+				"imageCallBack"
+			],
+			[
+				"Iam",
+				"ImageConverter"
+			],
+			[
+				"Ima",
+				"ImageConverter"
+			],
+			[
+				"iamge",
+				"image_transport"
+			],
+			[
+				"al",
+				"aliases"
+			],
+			[
+				"max",
+				"max_br"
+			],
+			[
+				"cur",
+				"cur_br"
+			],
+			[
+				"set",
+				"setPixelColor"
+			],
+			[
+				"targ",
+				"targ_br"
+			],
+			[
+				"calc",
+				"calcNextValue"
+			],
+			[
+				"gre",
+				"greenColorScale"
+			],
+			[
+				"star",
+				"startMax"
+			],
+			[
+				"sca",
+				"scaleFact"
+			],
+			[
+				"sat",
+				"stats"
+			],
+			[
+				"n",
+				"num_assig"
+			],
+			[
+				"nm",
+				"number"
+			],
+			[
+				"lat",
+				"lates"
+			],
+			[
+				"drop",
+				"dropped"
+			],
+			[
+				"P",
+				"p_per_day"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
+				"wei",
+				"weights"
+			],
+			[
+				"num",
+				"num_assig"
+			],
+			[
+				"ma",
+				"malloc"
+			],
+			[
+				"scale",
+				"scaleFactor"
+			],
+			[
+				"ta",
+				"targ_br"
+			],
+			[
+				"cal",
+				"calcNextValue"
+			],
+			[
+				"le",
+				"LENGTH"
+			],
+			[
+				"tra",
+				"targ_br"
+			],
+			[
+				"draw",
+				"draw_triangle"
+			],
+			[
+				"dr",
+				"draw_rectangle"
+			],
+			[
+				"I",
+				"IN_PROGRESS"
+			],
+			[
+				"ca",
+				"cameraCallBack"
+			],
+			[
+				"pub",
+				"publisher"
+			],
+			[
+				"lin",
+				"linear_acceleration_covariance"
+			],
+			[
+				"or",
+				"orientation_covariance"
+			],
+			[
+				"a",
+				"angular_velocity"
+			],
+			[
+				"p",
+				"publish"
+			],
+			[
+				"Imu",
+				"ImuSimNode"
+			],
+			[
+				"b",
+				"bi_z_axis"
+			],
+			[
+				"ex",
+				"example_device"
+			],
+			[
+				"sub",
+				"subNode"
+			],
+			[
+				"is",
+				"is_verbose	function"
+			],
+			[
+				"is_lis",
+				"is_listing_text	function"
+			],
+			[
+				"is_li",
+				"is_listing	function"
+			],
+			[
+				"sa",
+				"sample_device"
+			],
+			[
+				"catkin",
+				"catkin_LIBRARIES"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/216_C.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/216_C.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/216_C.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 566.0,
+		"last_filter": "in",
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Col",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: li",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"col",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"Package Control: p",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lis",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"colo",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"linter to",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 698.0
+	},
+	"console":
+	{
+		"height": 575.0,
+		"history":
+		[
+			"help",
+			"pwd",
+			"print(\"hello\")",
+			"ls",
+			"clear",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/jeremy/workspace/arduino/led_controller"
+	],
+	"file_history":
+	[
+		"/home/jeremy/workspace/College/CMSC 216/photoalbum/my_memory_checker_216.c",
+		"/home/jeremy/workspace/College/CMSC 216/photoalbum/my_memory_checker_216.h",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/photoalbum/build.sh",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/hashtester.c",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/build.sh",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project2/public01.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/student01.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public01.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public03.in",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public02.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public03.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public02.in",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/public01.in",
+		"/home/jeremy/.config/sublime-text-3/Packages/Highlight Build Errors/HighlightBuildErrors.sublime-settings",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/HighlightBuildErrors.sublime-settings",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/hashtable.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216public/lecture_examples/Week6/IO-Code/sscanf_example.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216public/lecture_examples/Week6/IO-Code/fscanf_example.c",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/project3.sublime-project",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/hashtable.h",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/216_C.sublime-build",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project3/Makefile",
+		"/home/jeremy/.zprofile",
+		"/home/jeremy/.zshrc",
+		"/home/jeremy/.ssh/config",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/camera/src/camera_sim.cpp",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/camera/src/main.cpp",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/camera/include/camera_sim.h",
+		"/home/jeremy/workspace/arduino/led_controller/fire/fire.",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project2/hashtable.c",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/include/qubo_node.h",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/CMakeLists.txt",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/package.xml",
+		"/home/jeremy/Robotics/R@M/qubo/packages/ram_cpp_utils/package.xml",
+		"/home/jeremy/Robotics/R@M/qubo/packages/ram_cpp_utils/CMakeLists.txt",
+		"/tmp/yaourt-tmp-jeremy/aur-python-powerline-git/PKGBUILD",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/textmanipulation/public01.output",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/textmanipulation/textmanipulation.c",
+		"/home/jeremy/workspace/arduino/led_controller/fire/fire.ino",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216/project1/grades.c",
+		"/home/jeremy/.themes/Flatabulous-master/gtk-2.0/gtkrc",
+		"/run/user/1000/gvfs/sftp:host=linux.grace.umd.edu,user=jweed262/afs/glue.umd.edu/home/glue/j/w/jweed262/home/216public/info/using_git.txt",
+		"/home/jeremy/.cache/.fr-qUhejZ/README.md",
+		"/home/jeremy/workspace/arduino/led_controller/testing.c",
+		"/home/jeremy/.cache/.fr-xZai9H/README.md",
+		"/home/jeremy/workspace/College/stuff/cvec.c",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/dvl/src/main.cpp",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/depth_sensor/src/main.cpp",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/dvl/include/dvl_sim.h",
+		"/home/jeremy/Robotics/R@M/qubo/packages/qubo_vehicle_layer/imu/src/imu_sim.cpp",
+		"/home/jeremy/.config/i3/config",
+		"/home/jeremy/bin/mouse_settings.sh",
+		"/home/jeremy/Robotics/deviltech/GRIP/gradlew",
+		"/home/jeremy/Robotics/deviltech/GRIP/gradlew.bat",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project4.m",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project5.m",
+		"/home/jeremy/College Stuff/GEOL 124/Ice Ages",
+		"/home/jeremy/College Stuff/GEOL 124/Term Paper Grading",
+		"/home/jeremy/College Stuff/GEOL 124/What are isotopes?",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/dvl/src/dvl_sim.cpp",
+		"/usr/lib/python2.7/site-packages/guake/palettes.py",
+		"/usr/lib/python2.7/site-packages/guake/prefs.py",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/dvl/include/dvl_sim.h",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project3.m",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project5",
+		"/home/jeremy/Robotics/qubo/.gitignore",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/CMakeLists.txt",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/src/depth_sensor_sim.cpp",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/include/vehicle_layer.h",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/src/QuboNode.cpp",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/src/vehicle_layer.cpp",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/src/device.cpp",
+		"/home/jeremy/College Stuff/GEOL 124/What are the light and Dark Reactions of Photosynthesis",
+		"/home/jeremy/College Stuff/GEOL 124/Life without Oxygen: The microbial world of the Archean",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project1.m",
+		"/home/jeremy/College Stuff/MATH 246/MatlabProjects/Project2.m",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/include/device.h",
+		"/usr/share/themes/Flat-Plat/gtk-3.0/README",
+		"/usr/share/themes/Flat-Plat/gtk-3.0/_common.scss",
+		"/home/jeremy/.bashrc",
+		"/usr/share/themes/Flat-Plat/gtk-3.0/assets.txt",
+		"/usr/share/themes/Flat-Plat/gnome-shell/HACKING",
+		"/usr/share/themes/Flat-Plat/COPYING",
+		"/usr/share/themes/Flat-Plat/README",
+		"/home/jeremy/College Stuff/GEOL 124/Mount Sharp, Gale Crater, Mars",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/jeremy/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/jeremy/.bash_profile",
+		"/home/jeremy/.bash_",
+		"/home/jeremy/dead.letter",
+		"/tmp/yaourt-tmp-jeremy/aur-matlab/PKGBUILD",
+		"/tmp/yaourt-tmp-jeremy/aur-ncurses5-compat-libs/PKGBUILD",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/src/device.h",
+		"/boot/loader/entries/arch.conf",
+		"/tmp/yaourt-tmp-jeremy/aur-ttf-anjali-old-lipi/chromeos-extra-fonts.install",
+		"/tmp/yaourt-tmp-jeremy/aur-ttf-anjali-old-lipi/PKGBUILD",
+		"/home/jeremy/.xbindkeysrc",
+		"/etc/X11/xorg.conf",
+		"/home/jeremy/.config/autostart/docky.desktop",
+		"/home/jeremy/.config/autostart/mouse_settings.desktop",
+		"/home/jeremy/mouse_settings",
+		"/home/jeremy/Robotics/qubo/packages/i_ros_every_night/src/helloWorld.cpp",
+		"/home/jeremy/.conkyrc",
+		"/home/jeremy/bin/Logitech M705 Profile.sh",
+		"/home/jeremy/.bash_logout",
+		"/home/jeremy/Robotics/qubo/packages/i_ros_every_night/package.xml",
+		"/home/jeremy/Robotics/qubo/packages/qubo_vehicle_layer/package.xml",
+		"/home/jeremy/.local/share/applications/defaults.list",
+		"/home/jeremy/College Stuff/GEOL 124/Where did all the elements come from?",
+		"/home/jeremy/workspace/SpaceGame/android/build.gradle",
+		"/home/jeremy/workspace/SpaceGame/.gitignore",
+		"/home/jeremy/workspace/SpaceGame/android/project.properties",
+		"/home/jeremy/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/usr/share/applications/idea.desktop",
+		"/usr/share/applications/jetbrains-idea-ce.desktop",
+		"/home/jeremy/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/jeremy/workspace/SpaceGame/build.gradle",
+		"/home/jeremy/.IdeaIC14/system/log/idea.log"
+	],
+	"find":
+	{
+		"height": 63.0
+	},
+	"find_in_files":
+	{
+		"height": 243.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			");\n",
+			"init",
+			"--pkg",
+			"	\n",
+			"dropped",
+			"weights",
+			"mean",
+			"/",
+			"27",
+			"y",
+			"x",
+			"VPA",
+			"palette",
+			"pale",
+			"Pressure",
+			"DepthSimNode",
+			"ExampleDevice",
+			"\n		",
+			"material",
+			"titlebar",
+			"bar",
+			"top",
+			"bar",
+			"is_listing_link",
+			"jomol",
+			"my-p",
+			"lohit",
+			"ko-",
+			"anjal",
+			"inhe",
+			"licen",
+			"na",
+			"user",
+			"title_vertical_pad"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"meanf",
+			"\\",
+			"yN",
+			"xN",
+			"vpa",
+			"DVL",
+			"DVLSimNode",
+			"ExampleSub"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 96.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 216.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 158.0
+	},
+	"pinned_build_system": "Packages/User/216_C.sublime-build",
+	"project": "led_controller.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
