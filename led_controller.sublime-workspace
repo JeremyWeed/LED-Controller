@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"cur",
+				"cur_lit"
+			],
+			[
+				"de",
+				"de_length"
+			],
+			[
+				"ma",
+				"max_lit"
+			],
+			[
+				"ch",
+				"ch_length"
+			],
+			[
+				"snow",
+				"snow_set"
+			],
+			[
+				"fire",
+				"fire_set"
+			],
+			[
+				"fir",
+				"fire_set"
+			],
+			[
+				"Firs",
+				"FireSet"
+			],
+			[
 				"oper",
 				"operation"
 			],
@@ -84,10 +116,6 @@
 				"max_br"
 			],
 			[
-				"cur",
-				"cur_br"
-			],
-			[
 				"set",
 				"setPixelColor"
 			],
@@ -146,10 +174,6 @@
 			[
 				"num",
 				"num_assig"
-			],
-			[
-				"ma",
-				"malloc"
 			],
 			[
 				"scale",
@@ -401,12 +425,14 @@
 		"menu_visible": true,
 		"show_minimap": false,
 		"show_open_files": false,
-		"show_tabs": false,
+		"show_tabs": true,
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
 	"file_history":
 	[
+		"/home/jeremy/workspace/arduino/led_controller/led_controller/include/fire.h",
+		"/home/jeremy/workspace/arduino/led_controller/.gitignore",
 		"/home/jeremy/workspace/arduino/led_controller/fire/fire.ino",
 		"/home/jeremy/workspace/arduino/led_controller/led.h",
 		"/home/jeremy/workspace/arduino/led_controller/led_controller.ino",
@@ -551,6 +577,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cur_br",
 			");\n",
 			"init",
 			"--pkg",
@@ -592,6 +619,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"cur_list",
+			"cur_br",
 			"meanf",
 			"\\",
 			"yN",
@@ -624,11 +653,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -653,7 +689,7 @@
 	"pinned_build_system": "Packages/User/216_C.sublime-build",
 	"replace":
 	{
-		"height": 60.0
+		"height": 115.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -662,6 +698,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"fire.cpp",
+				"led_controller/fire.cpp"
+			],
+			[
+				"fire.h",
+				"led_controller/include/fire.h"
+			],
+			[
+				"fi",
+				"fire/fire.ino"
+			],
+			[
+				"fir",
+				"led_controller/fire.c"
+			]
 		],
 		"width": 0.0
 	},

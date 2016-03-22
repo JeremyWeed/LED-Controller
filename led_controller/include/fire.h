@@ -8,44 +8,50 @@
 
 typedef struct fire_set{
 	//average and maximum brightness of the leds
-	unsigned char max_br = 255;
-	unsigned char targ_br = 128;
+	unsigned char max_br;
+	unsigned char targ_br;
 
 	//arrays to hold the color and brightness of each led
 	unsigned char cur_br[LENGTH];
 	unsigned char cur_color_inten[LENGTH];
-	Color col = {.R = 0xFF, .G = 0x.60, .B = 0x00}; 
+	Color col; 
 
 	//value pre-calc'ed to scale each part of the color
 	double c_scale[3];
 
 	//the mode for the fire
-	unsigned char mode = 0;
+	unsigned char mode;
+
+	// length in milliseconds for each loop
+	unsigned long startup_length; 
+	unsigned long loop_length;
 
 	//amount the led should change with each interation
-	unsigned char variance = 3;
+	unsigned char variance;
 
 	//determines how random the variations are
 	//the higher the number, the more random
-	unsigned long steps = 12800;
+	unsigned long steps;
 }FireSet;
 
-FireSet *fire_set;
+extern FireSet *fire_set;
 
-void init();
-void change_color(Color col);
+void f_init();
+void change_fire_color(Color col);
 void burn();
-void fullColorScale(long last_loop);
-void greenColorScale(long last_loop);
-void compositeColorScale(long last_loop);
+void fadeIn();
+void fullColorScale();
+void greenColorScale();
+void compositeColorScale();
+void fireScale();
 
+static void fire_str_init(FireSet *fs);
 static double calcThetaWalk(int cur, int target);
 static int calcNextValue(int cur, int target);
 static int scale(int num, double scale);
 static double scaleFactor(int startMax, int endMax);
 static int clamp(int val);
-
-
+static int clamp_t(int val, int target, int range);
 
 
 #endif
