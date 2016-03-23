@@ -4,6 +4,8 @@
 
 #include "include/fire.h"
 
+#define FIRE_NODES 5
+
 FireSet *fire_set;
 
 void f_init(){
@@ -123,8 +125,40 @@ void compositeColorScale(){
 	}
 }
 //should look a bit more like a fire
+//basically, it does everything compositeColorScale does,
+//but includes FIRE_NODES number of points, distributed
+//evenly across the strip. The values given by the
+//compositeColorScale are then scaled by the average value
+//between the two closest nodes
 void fireScale(){
-	unsigned char fire[LENGTH/15] = {0};
+	static unsigned char fire[FIRE_NODES] = {0};
+	static double step = LENGTH / (FIRE_NODES - 1);
+
+	for(int i = 0; i < FIRE_NODES; i++){
+		fire[i] = calcNextValue(fire[i], fire_set->targ_br);
+	}
+
+	for(int i = 0; i < LENGTH; i++){
+		unsigned char lower = i / step;
+		double d_low = fire[lower] / (i - lower * step);
+		double d_hi = fire[lower + 1] / ((lower + 1) * step - i);
+		double total = (d_low + d_hi) / step;
+		unsigned char f_in = (char) total;
+
+		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
+			fire_set->targ_br);
+		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
+			fire_set->targ_br);
+		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
+
+		unsigned char r = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, fire_set->c_scale[0]), fire_set->max_br));
+		unsigned char g = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, 
+			scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br)), fire_set->max_br));
+		unsigned char b = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, fire_set->c_scale[2]), fire_set->max_br));
+
+		leds.setPixelColor(i, r, g, b);
+
+	}
 }
 
 static double calcThetaWalk(int cur, int target){

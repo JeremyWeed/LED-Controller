@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fire",
+				"fire_inten"
+			],
+			[
 				"cur",
 				"cur_lit"
 			],
@@ -22,10 +26,6 @@
 			[
 				"snow",
 				"snow_set"
-			],
-			[
-				"fire",
-				"fire_set"
 			],
 			[
 				"fir",
@@ -653,18 +653,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
