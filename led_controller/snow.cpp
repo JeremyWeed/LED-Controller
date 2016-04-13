@@ -1,5 +1,5 @@
 #include "include/snow.h"
-
+//LOOK INTO FASTLED
 SnowSet *snow_set;
 
 void s_init(){
@@ -7,11 +7,11 @@ void s_init(){
 
 	snow_set->max_lit = 255;
 
-	snow_set->in_length = 3;
-	snow_set->de_length = 10;
-	snow_set->ch_length = 750;
+	snow_set->in_length = 1;
+	snow_set->de_length = 20;
+	snow_set->ch_length = 50;
 
-	Color col = {.R = 0xFF, .G = 0xFF, .B = 0xFF};
+	Color col = {.R = 250, .G = 150, .B = 42};
 	change_snow_color(col);
 	randomSeed(analogRead(0));
 }
@@ -19,46 +19,50 @@ void s_init(){
 void snow(){
 	static unsigned long in_cur = 0, de_cur = 0, ch_cur = 0;
 	SnowSet *ss = snow_set;
+	bool bright = false, dark = false;
 
-	if(ch_cur + ss->ch_length > millis()){
+	if(ch_cur + ss->ch_length < millis()){
 		ch_cur = millis();
 		ss->cur_b[random(LENGTH)] = true;
 	}
 
 	//is it time to brighten?
-	if(in_cur + ss->in_length > millis()){
-		for(int i = 0; i < LENGTH; i++){
-			//find which ones to brighten
+	if(in_cur + ss->in_length < millis()){
+		in_cur = millis();
+		bright = true;
+	}
+	if(de_cur + ss->de_length < millis()){
+		de_cur = millis();
+		dark = true;
+	}
+
+	for(int i = 0; i < LENGTH; i++){
+		//find which ones to brighten
+		if(bright){
 			if(ss->cur_b[i]){
-				//is it already bright enough?
+			//is it already bright enough?
 				if(ss->cur_lit[i] >= ss->max_lit){
 					ss->cur_b[i] = false;
 				}else{
 					ss->cur_lit[i]++;
-					leds.setPixelColor(i, 
-						scale(ss->col.R, ss->max_lit),
-						scale(ss->col.G, ss->max_lit),
-						scale(ss->col.B, ss->max_lit)
-						);
 				}
 			}
 		}
-	}
-	//time to decrease?
-	if(de_cur + ss->de_length > millis()){
-		for(int i = 0; i < LENGTH; i++){
+		if(dark){
 			if(!ss->cur_b[i]){
 				if(ss->cur_lit[i] > 0){
-					ss->cur_lit[i]--;
-					leds.setPixelColor(i, 
-						scale(ss->col.R, ss->max_lit),
-						scale(ss->col.G, ss->max_lit),
-						scale(ss->col.B, ss->max_lit)
-						);
+				ss->cur_lit[i]--;
 				}
 			}
 		}
+		leds.setPixelColor(i, 
+			scale(ss->col.R, ss->cur_lit[i]),
+			scale(ss->col.G, ss->cur_lit[i]),
+			scale(ss->col.B, ss->cur_lit[i])
+			);
 	}
+
+	leds.show();
 
 }
 
@@ -67,7 +71,7 @@ void change_snow_color(Color col){
 }
 
 static unsigned char scale(unsigned char col, unsigned char inten){
-	float ratio =  inten / 0xFF.0p0;
+	float ratio =  inten / (float) 0xFF;
 	ratio *= col;
 	return (char) ratio;
 }

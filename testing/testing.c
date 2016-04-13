@@ -34,12 +34,33 @@ void testWalk(){
 	}
 }
 
+static unsigned char scale_c(unsigned char col, unsigned char inten){
+	float ratio =  inten / (float) 0xFF;
+	printf("%f\n", ratio);
+	ratio *= col;
+	return (char) ratio;
+}
+
 int scale(int num, double scale){
 	return (int) ((double) num * scale);
 }
 
 double scaleFactor(int startMax, int endMax){
 	return (double) startMax / (double) endMax;
+}
+
+void testScale_c(){
+	int scal = 0;
+	double fact = 0;
+	printf("enter scale: ");
+	scanf(" %d", &scal);
+	printf("factor: %f\n", fact);
+	while(1){
+		int num = 0;
+		printf("scales %d between 0 and 255:\nNumber: ", scal);
+		scanf("%d", &num);
+		printf("entered: %d  Calc: %d\n", num, scale_c(num, scal));
+	}
 }
 
 void testScale(){
@@ -77,6 +98,6 @@ void testColorScale(){
 
 int main(){
 	//setup();
-	testColorScale();
+	testScale_c();
 	return 0;
 }

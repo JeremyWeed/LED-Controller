@@ -4,15 +4,16 @@
 #include <Adafruit_NeoPixel.h>
 #include "include/led.h"
 #include "include/fire.h"
+#include "include/snow.h"
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LENGTH, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup(){
-	f_init();
+	s_init();
 	leds.begin();
 }
 
 void loop(){
-	burn();
+	snow();
 }
 

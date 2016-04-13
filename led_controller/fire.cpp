@@ -4,7 +4,6 @@
 
 #include "include/fire.h"
 
-#define FIRE_NODES 5
 
 FireSet *fire_set;
 
@@ -21,7 +20,7 @@ static void fire_str_init(FireSet *fs){
 	fs->targ_br = 128;
 
 	//this is a default orangish color
-	Color col = {.R = 0xFF, .G = 0x40, .B = 0x00};
+	Color col = {.R = 0xFF, .G = 0x35, .B = 0x00};
 	change_fire_color(col); 
 	fs->mode = 0;
 	fs->variance = 3;
@@ -34,6 +33,9 @@ static void fire_str_init(FireSet *fs){
 	for(int i = 0; i < LENGTH; i++){
 		fs->cur_color_inten[i] = fs->col.G;
 	}
+	for(int i = 0; i < FIRE_NODES; i++){
+		fs->fire[i] = fs->targ_br;
+	}
 }
 
 void burn(){
@@ -44,11 +46,14 @@ void burn(){
 		case 0:
 			fadeIn();
 			if(fire_set->cur_br[0] >= fire_set->targ_br){
-				fire_set->mode = 1;
+				fire_set->mode = 2;
 			}
 			break;
 		case 1:
 			compositeColorScale();
+			break;
+		case 2:
+			fireScale();
 			break;
 		default:
 			break;
@@ -131,25 +136,26 @@ void compositeColorScale(){
 //compositeColorScale are then scaled by the average value
 //between the two closest nodes
 void fireScale(){
-	static unsigned char fire[FIRE_NODES] = {0};
-	static double step = LENGTH / (FIRE_NODES - 1);
+	static double step = LENGTH / (FIRE_NODES - 1.0);
 
 	for(int i = 0; i < FIRE_NODES; i++){
-		fire[i] = calcNextValue(fire[i], fire_set->targ_br);
+		fire_set->fire[i] = calcNextValue(fire_set->fire[i], fire_set->targ_br);
 	}
 
 	for(int i = 0; i < LENGTH; i++){
 		unsigned char lower = i / step;
-		double d_low = fire[lower] / (i - lower * step);
-		double d_hi = fire[lower + 1] / ((lower + 1) * step - i);
+		double d_low = fire_set->fire[lower] * (i - lower * step);
+		double d_hi = fire_set->fire[lower + 1] * ((lower + 1) * step - i);
 		double total = (d_low + d_hi) / step;
-		unsigned char f_in = (char) total;
+		unsigned char f_in = clamp_t((char) total, 0x40, 0x40);
 
 		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
+
+		fire_set->cur_br[i] = clamp_t(fire_set->cur_br[i], fire_set->targ_br, 0x40);
 
 		unsigned char r = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, fire_set->c_scale[0]), fire_set->max_br));
 		unsigned char g = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, 
@@ -160,6 +166,38 @@ void fireScale(){
 
 	}
 }
+
+
+//second testing version
+void fireScale2(){
+	static double step = LENGTH / (FIRE_NODES - 1.0);
+
+	for(int i = 0; i < FIRE_NODES; i++){
+		fire_set->fire[i] = calcNextValue(fire_set->fire[i], fire_set->targ_br);
+	}
+
+	for(int i = 0; i < LENGTH; i++){
+		unsigned char lower = i / step;
+		double d_low = fire_set->fire[lower] * (i - lower * step);
+		double d_hi = fire_set->fire[lower + 1] * ((lower + 1) * step - i);
+		double total = (d_low + d_hi) / step;
+		unsigned char f_in = (char) total;//clamp_t((char) total, 0xBF, 0x40);
+
+		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
+			fire_set->targ_br);
+		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
+			fire_set->targ_br);
+		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
+
+		unsigned char r = scale(f_in, fire_set->c_scale[0]);
+		unsigned char g = scale(f_in, scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br));
+		unsigned char b = scale(f_in, fire_set->c_scale[2]);
+
+		leds.setPixelColor(i, r, g, b);
+
+	}
+}
+
 
 static double calcThetaWalk(int cur, int target){
 	double theta = target - cur;

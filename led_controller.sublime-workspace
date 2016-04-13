@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
-				"fire",
-				"fire_inten"
+				"cla",
+				"clamp_t"
+			],
+			[
+				"cu",
+				"cur_color_inten"
+			],
+			[
+				"sacl",
+				"c_scale"
 			],
 			[
 				"cur",
-				"cur_lit"
+				"cur_br"
+			],
+			[
+				"fire",
+				"fire_set"
+			],
+			[
+				"F",
+				"FIRE_NODES"
 			],
 			[
 				"de",
@@ -431,6 +447,7 @@
 	},
 	"file_history":
 	[
+		"/home/jeremy/workspace/arduino/led_controller/led_controller/snow.cpp",
 		"/home/jeremy/workspace/arduino/led_controller/led_controller/include/fire.h",
 		"/home/jeremy/workspace/arduino/led_controller/.gitignore",
 		"/home/jeremy/workspace/arduino/led_controller/fire/fire.ino",
@@ -557,8 +574,7 @@
 		"/usr/share/applications/idea.desktop",
 		"/usr/share/applications/jetbrains-idea-ce.desktop",
 		"/home/jeremy/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
-		"/home/jeremy/workspace/SpaceGame/build.gradle",
-		"/home/jeremy/.IdeaIC14/system/log/idea.log"
+		"/home/jeremy/workspace/SpaceGame/build.gradle"
 	],
 	"find":
 	{

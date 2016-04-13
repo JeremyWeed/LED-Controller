@@ -6,6 +6,8 @@
 #include <Adafruit_NeoPixel.h>
 #include "led.h"
 
+#define FIRE_NODES 5
+
 typedef struct fire_set{
 	//average and maximum brightness of the leds
 	unsigned char max_br;
@@ -32,6 +34,9 @@ typedef struct fire_set{
 	//determines how random the variations are
 	//the higher the number, the more random
 	unsigned long steps;
+
+	unsigned char fire[FIRE_NODES];
+
 }FireSet;
 
 extern FireSet *fire_set;
@@ -44,6 +49,7 @@ void fullColorScale();
 void greenColorScale();
 void compositeColorScale();
 void fireScale();
+void fireScale2();
 
 static void fire_str_init(FireSet *fs);
 static double calcThetaWalk(int cur, int target);
