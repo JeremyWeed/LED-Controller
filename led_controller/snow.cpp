@@ -11,7 +11,7 @@ void s_init(){
 	snow_set->de_length = 20;
 	snow_set->ch_length = 50;
 
-	Color col = {.R = 250, .G = 150, .B = 42};
+	Color col = {.R = 255, .G = 150, .B = 20};
 	change_snow_color(col);
 	randomSeed(analogRead(0));
 }
