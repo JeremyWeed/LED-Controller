@@ -13,4 +13,10 @@ typedef struct color{
 
 extern Adafruit_NeoPixel leds;
 
+static unsigned char scale(unsigned char col, unsigned char inten){
+	float ratio =  inten / (float) 0xFF;
+	ratio *= col;
+	return (char) ratio;
+}
+
 #endif

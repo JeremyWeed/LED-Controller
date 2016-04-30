@@ -11,7 +11,7 @@ void s_init(){
 	snow_set->de_length = 20;
 	snow_set->ch_length = 50;
 
-	Color col = {.R = 255, .G = 150, .B = 20};
+	Color col = {.R = 255, .G = 90, .B = 0};
 	change_snow_color(col);
 	randomSeed(analogRead(0));
 }
@@ -70,8 +70,4 @@ void change_snow_color(Color col){
 	snow_set->col = col;
 }
 
-static unsigned char scale(unsigned char col, unsigned char inten){
-	float ratio =  inten / (float) 0xFF;
-	ratio *= col;
-	return (char) ratio;
-}
+

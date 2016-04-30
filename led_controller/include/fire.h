@@ -54,7 +54,7 @@ void fireScale2();
 static void fire_str_init(FireSet *fs);
 static double calcThetaWalk(int cur, int target);
 static int calcNextValue(int cur, int target);
-static int scale(int num, double scale);
+static int fscale(int num, double scale);
 static double scaleFactor(int startMax, int endMax);
 static int clamp(int val);
 static int clamp_t(int val, int target, int range);

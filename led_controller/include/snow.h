@@ -20,4 +20,3 @@ extern SnowSet *snow_set;
 void s_init();
 void snow();
 void change_snow_color(Color col);
-static unsigned char scale(unsigned char col, unsigned char inten);

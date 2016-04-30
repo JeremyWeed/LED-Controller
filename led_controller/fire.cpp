@@ -79,9 +79,9 @@ void change_fire_color(Color col){
 void fadeIn(){
 	for(int i = 0; i < LENGTH; i++){
 		leds.setPixelColor(i,
-			scale(fire_set->cur_br[i], fire_set->c_scale[0]),
-			scale(fire_set->cur_br[i], fire_set->c_scale[1]),
-			scale(fire_set->cur_br[i], fire_set->c_scale[2])
+			fscale(fire_set->cur_br[i], fire_set->c_scale[0]),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[1]),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[2])
 			);
 		if(fire_set->cur_br[i] < fire_set->targ_br){
 			fire_set->cur_br[i]++;
@@ -95,9 +95,9 @@ void fullColorScale(){
 	for(int i = 0; i < LENGTH; i++){
 		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], fire_set->targ_br);
 		leds.setPixelColor(i, 
-			scale(fire_set->cur_br[i], fire_set->c_scale[0]),
-			scale(fire_set->cur_br[i], fire_set->c_scale[1]),
-			scale(fire_set->cur_br[i], fire_set->c_scale[2])
+			fscale(fire_set->cur_br[i], fire_set->c_scale[0]),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[1]),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[2])
 			);
 	}
 }
@@ -107,7 +107,7 @@ void greenColorScale(){
 		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], fire_set->targ_br);
 		leds.setPixelColor(i,
 			fire_set->col.R,
-			scale(fire_set->cur_br[i], fire_set->c_scale[1]),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[1]),
 			fire_set->col.B
 			);
 	}
@@ -123,9 +123,9 @@ void compositeColorScale(){
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
 		leds.setPixelColor(i,
-			scale(fire_set->cur_br[i], fire_set->c_scale[0]),
-			scale(fire_set->cur_br[i], scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br)),
-			scale(fire_set->cur_br[i], fire_set->c_scale[2])
+			fscale(fire_set->cur_br[i], fire_set->c_scale[0]),
+			fscale(fire_set->cur_br[i], scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br)),
+			fscale(fire_set->cur_br[i], fire_set->c_scale[2])
 			);
 	}
 }
@@ -157,10 +157,10 @@ void fireScale(){
 
 		fire_set->cur_br[i] = clamp_t(fire_set->cur_br[i], fire_set->targ_br, 0x40);
 
-		unsigned char r = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, fire_set->c_scale[0]), fire_set->max_br));
-		unsigned char g = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, 
+		unsigned char r = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, fire_set->c_scale[0]), fire_set->max_br));
+		unsigned char g = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, 
 			scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br)), fire_set->max_br));
-		unsigned char b = scale(fire_set->cur_br[i], scaleFactor(scale(f_in, fire_set->c_scale[2]), fire_set->max_br));
+		unsigned char b = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, fire_set->c_scale[2]), fire_set->max_br));
 
 		leds.setPixelColor(i, r, g, b);
 
@@ -189,9 +189,9 @@ void fireScale2(){
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
 
-		unsigned char r = scale(f_in, fire_set->c_scale[0]);
-		unsigned char g = scale(f_in, scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br));
-		unsigned char b = scale(f_in, fire_set->c_scale[2]);
+		unsigned char r = fscale(f_in, fire_set->c_scale[0]);
+		unsigned char g = fscale(f_in, scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br));
+		unsigned char b = fscale(f_in, fire_set->c_scale[2]);
 
 		leds.setPixelColor(i, r, g, b);
 
@@ -221,7 +221,7 @@ static int calcNextValue(int cur, int target){
 	}
 }
 
-static int scale(int num, double scale){
+static int fscale(int num, double scale){
 	return (int) ((double) num * scale);
 }
 

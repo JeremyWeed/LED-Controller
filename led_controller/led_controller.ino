@@ -5,15 +5,16 @@
 #include "include/led.h"
 #include "include/fire.h"
 #include "include/snow.h"
+#include "include/string_lights.h"
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LENGTH, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup(){
-	s_init();
+	sl_init();
 	leds.begin();
 }
 
 void loop(){
-	snow();
+	string_light_main();
 }
 
