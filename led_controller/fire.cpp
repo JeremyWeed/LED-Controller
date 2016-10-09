@@ -1,8 +1,8 @@
-//This is the cpp file that implements all of the functions declared in the fire.h 
-//header file. 
+//This is the cpp file that implements all of the functions declared in the fire.h
+//header file.
 //Written by Jeremy Weed
 
-#include "include/fire.h"
+#include "include/fire.hpp"
 
 
 FireSet *fire_set;
@@ -15,13 +15,15 @@ void f_init(){
 	randomSeed(analogRead(0));
 }
 
+//Init method
+//must be called before any other method in thi file
 static void fire_str_init(FireSet *fs){
 	fs->max_br = 255;
 	fs->targ_br = 128;
 
 	//this is a default orangish color
 	Color col = {.R = 0xFF, .G = 0x35, .B = 0x00};
-	change_fire_color(col); 
+	change_fire_color(col);
 	fs->mode = 0;
 	fs->variance = 3;
 	fs->steps = 12800;
@@ -38,15 +40,17 @@ static void fire_str_init(FireSet *fs){
 	}
 }
 
+//Main loop method
+//call this in the loop method to use this setup
 void burn(){
 	static unsigned long last_loop = 0;
 	last_loop = millis();
 	switch(fire_set->mode){
-		
+
 		case 0:
 			fadeIn();
 			if(fire_set->cur_br[0] >= fire_set->targ_br){
-				fire_set->mode = 2;
+				fire_set->mode = 1;  //hardcoded to just use compositeColor
 			}
 			break;
 		case 1:
@@ -65,7 +69,7 @@ void burn(){
 	leds.show();
 }
 
-//changes the default color 
+//changes the default color
 void change_fire_color(Color col){
 	FireSet *fs = fire_set;
 
@@ -87,14 +91,14 @@ void fadeIn(){
 			fire_set->cur_br[i]++;
 		}
 	}
-	
+
 }
 
 //scales all colors
 void fullColorScale(){
 	for(int i = 0; i < LENGTH; i++){
 		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], fire_set->targ_br);
-		leds.setPixelColor(i, 
+		leds.setPixelColor(i,
 			fscale(fire_set->cur_br[i], fire_set->c_scale[0]),
 			fscale(fire_set->cur_br[i], fire_set->c_scale[1]),
 			fscale(fire_set->cur_br[i], fire_set->c_scale[2])
@@ -116,10 +120,10 @@ void greenColorScale(){
 void compositeColorScale(){
 
 	for(int i = 0; i < LENGTH; i++){
-		
-		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
+
+		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i],
 			fire_set->targ_br);
-		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
+		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i],
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
 		leds.setPixelColor(i,
@@ -149,16 +153,16 @@ void fireScale(){
 		double total = (d_low + d_hi) / step;
 		unsigned char f_in = clamp_t((char) total, 0x40, 0x40);
 
-		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
+		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i],
 			fire_set->targ_br);
-		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
+		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i],
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
 
 		fire_set->cur_br[i] = clamp_t(fire_set->cur_br[i], fire_set->targ_br, 0x40);
 
 		unsigned char r = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, fire_set->c_scale[0]), fire_set->max_br));
-		unsigned char g = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, 
+		unsigned char g = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in,
 			scaleFactor(fire_set->cur_color_inten[i], fire_set->max_br)), fire_set->max_br));
 		unsigned char b = fscale(fire_set->cur_br[i], scaleFactor(fscale(f_in, fire_set->c_scale[2]), fire_set->max_br));
 
@@ -183,9 +187,9 @@ void fireScale2(){
 		double total = (d_low + d_hi) / step;
 		unsigned char f_in = (char) total;//clamp_t((char) total, 0xBF, 0x40);
 
-		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i], 
+		fire_set->cur_br[i] = calcNextValue(fire_set->cur_br[i],
 			fire_set->targ_br);
-		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i], 
+		fire_set->cur_color_inten[i] = calcNextValue(fire_set->cur_color_inten[i],
 			fire_set->targ_br);
 		fire_set->cur_color_inten[i] = clamp_t(fire_set->cur_color_inten[i], fire_set->col.G, 0x15);
 

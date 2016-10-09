@@ -4,7 +4,7 @@
 //Written by Jeremy Weed
 
 #include <Adafruit_NeoPixel.h>
-#include "led.h"
+#include "led.hpp"
 
 #define FIRE_NODES 5
 
@@ -16,7 +16,7 @@ typedef struct fire_set{
 	//arrays to hold the color and brightness of each led
 	unsigned char cur_br[LENGTH];
 	unsigned char cur_color_inten[LENGTH];
-	Color col; 
+	Color col;
 
 	//value pre-calc'ed to scale each part of the color
 	double c_scale[3];
@@ -25,7 +25,7 @@ typedef struct fire_set{
 	unsigned char mode;
 
 	// length in milliseconds for each loop
-	unsigned long startup_length; 
+	unsigned long startup_length;
 	unsigned long loop_length;
 
 	//amount the led should change with each interation

@@ -1,7 +1,7 @@
 #ifndef STRING_LIGHTS
 #define STRING_LIGHTS
 
-#include "led.h"
+#include "led.hpp"
 
 #define NUM_COLORS 5
 

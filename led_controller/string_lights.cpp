@@ -1,13 +1,8 @@
-#include "include/string_lights.h"
+#include "include/string_lights.hpp"
 
 LightSet *light_set;
 
-static void setCol(Color *col, unsigned int color){
-  
-	col->R = (color & 0xFF0000) >> 16;
-	col->G = (color & 0x00FF00) >> 8;
-	col->B = (color & 0x0000FF);
-}
+
 
 static void setColors(LightSet *ls){
 	/* pastels
@@ -101,7 +96,7 @@ void choose_color(int i){
 		light_set->cols[e].R == light_set->cur_c[i].R &&
 		light_set->cols[e].G == light_set->cur_c[i].G &&
 		light_set->cols[e].B == light_set->cur_c[i].B
-		) 
+		)
 			return choose_color(i);
 	light_set->cur_c[i] = light_set->cols[e];
 }

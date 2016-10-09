@@ -1,7 +1,9 @@
-#include "include/snow.h"
+#include "include/snow.hpp"
 //LOOK INTO FASTLED
 SnowSet *snow_set;
 
+//init method for snow
+//must be called before any method in this file
 void s_init(){
 	snow_set = (SnowSet*)calloc(1, sizeof(SnowSet));
 
@@ -11,11 +13,13 @@ void s_init(){
 	snow_set->de_length = 20;
 	snow_set->ch_length = 50;
 
-	Color col = {.R = 255, .G = 90, .B = 0};
+	Color col = {.R = 255, .G = 255, .B = 255};
 	change_snow_color(col);
 	randomSeed(analogRead(0));
 }
 
+//main loop method for snow
+//call this in loop to use this setup
 void snow(){
 	static unsigned long in_cur = 0, de_cur = 0, ch_cur = 0;
 	SnowSet *ss = snow_set;
@@ -51,11 +55,11 @@ void snow(){
 		if(dark){
 			if(!ss->cur_b[i]){
 				if(ss->cur_lit[i] > 0){
-				ss->cur_lit[i]--;
+					ss->cur_lit[i]--;
 				}
 			}
 		}
-		leds.setPixelColor(i, 
+		leds.setPixelColor(i,
 			scale(ss->col.R, ss->cur_lit[i]),
 			scale(ss->col.G, ss->cur_lit[i]),
 			scale(ss->col.B, ss->cur_lit[i])
@@ -69,5 +73,3 @@ void snow(){
 void change_snow_color(Color col){
 	snow_set->col = col;
 }
-
-
