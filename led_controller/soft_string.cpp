@@ -16,7 +16,7 @@ void soft_string_init(){
 	ss->tDecrease = 4;
 	ss->tStay = 3000;
 
-	setCol(&(ss->col), 0xFFC58F);
+	setCol(&(ss->col), 0xE38500);
 	randomSeed(analogRead(0));
 }
 
