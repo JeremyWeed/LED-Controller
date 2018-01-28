@@ -12,6 +12,7 @@ typedef struct outrun_struct {
 	long length;
 	int node_locations[OUTRUN_NODES];
 	Color node_colors[OUTRUN_NODES];
+	unsigned char node_intens[OUTRUN_NODES];
 } OutrunSet;
 
 extern OutrunSet *outrun_set;

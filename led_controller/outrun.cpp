@@ -9,10 +9,10 @@ void outrun_init() {
 	outrun_set = (OutrunSet*) calloc(1, sizeof(OutrunSet));
 	OutrunSet *os = outrun_set;
 
-	setCol(&os->cols[0], 0x07d8cf); // blue
-	setCol(&os->cols[1], 0xea0ab3); // pink
-	setCol(&os->cols[2], 0xf7a481); // orange/yellow
-	setCol(&os->cols[3], 0x170562); // dark blue
+	setCol(&os->colors[0], 0x07d8cf); // blue
+	setCol(&os->colors[1], 0xea0ab3); // pink
+	setCol(&os->colors[2], 0xf7a481); // orange/yellow
+	setCol(&os->colors[3], 0x170562); // dark blue
 
 	os->length = 10000; // ms
 
@@ -24,16 +24,17 @@ void outrun_init() {
 	os->node_locations[OUTRUN_NODES - 1] = LENGTH - 1;
 
 	for (int i = 0; i < OUTRUN_NODES; i++) {
-		os->node_colors[i] = os->cols[0];
+		os->node_colors[i] = os->colors[0];
 	}
 }
 
 void drive() {
 	static unsigned long last_loop = 0;
+	OutrunSet *os = outrun_set;
 	last_loop = millis();
 
 	// Change the color of one node
-	os->node_colors[random(OUTRUN_NODES)] = cols[random(NUM_COLORS)];
+	os->node_colors[random(OUTRUN_NODES)] = os->colors[random(NUM_COLORS)];
 
 	unsigned char node = 1;
 	for (int i = 0; i < LENGTH; i++) {
