@@ -8,6 +8,7 @@
 #include "include/string_lights.hpp"
 #include "include/soft_string.hpp"
 #include "include/wave.hpp"
+#include "include/outrun.hpp"
 
 #define MODES 5
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LENGTH, PIN, NEO_GRB + NEO_KHZ800);
@@ -16,47 +17,48 @@ int mode = 0;
 void setup(){
 	randomSeed(analogRead(A0));
 	mode = random(MODES);  //0 - 3
+	/* mode = 3; */
 	switch(mode){
-		case 0:
-			sl_init();
-			break;
-		case 1:
-			f_init();
-			break;
-		case 2:
-			s_init();
-			break;
-		case 3:
-			soft_string_init();
-			break;
-		case 4:
-			wave_init();
-		default:
-			//R.I.P. little arduino
-			;
+	case 0:
+		sl_init();
+		break;
+	case 1:
+		f_init();
+		break;
+	case 2:
+		s_init();
+		break;
+	case 3:
+		outrun_init();
+		break;
+	case 4:
+		wave_init();
+	default:
+		//R.I.P. little arduino
+		;
 	}
 	leds.begin();
 }
 
 void loop(){
 	switch(mode){
-		case 0:
-			string_light_main();
-			break;
-		case 1:
-			burn();
-			break;
-		case 2:
-			snow();
-			break;
-		case 3:
-			soft_light();
-			break;
-		case 4:
-			wave_main();
-			break;
-		default:
-			//looks like we found an error, set something to red
-			leds.setPixelColor(1, 255, 0, 0);
+	case 0:
+		string_light_main();
+		break;
+	case 1:
+		burn();
+		break;
+	case 2:
+		snow();
+		break;
+	case 3:
+		drive();
+		break;
+	case 4:
+		wave_main();
+		break;
+	default:
+		//looks like we found an error, set something to red
+		leds.setPixelColor(1, 255, 0, 0);
 	}
 }
